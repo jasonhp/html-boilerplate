@@ -6,6 +6,7 @@ const getLangProp = optLang => {
       break
     case 'en':
       htmlLang = 'en'
+
       break
     default:
       htmlLang = 'en'

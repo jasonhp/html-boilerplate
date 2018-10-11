@@ -15,7 +15,7 @@ module.exports = {
   // Proxy
   proxyTable: {
     '/api': {
-      target: 'http://192.168.50.26:5323',
+      target: '',
       changeOrigin: true,
       pathRewrite: (path, req) => {
         console.log(path)
