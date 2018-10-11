@@ -60,18 +60,11 @@ const webpackConfigs = langList.map(lang => {
         Object.assign({}, pluginConfig, {
           filename: `${pageName}${isSingleLang ? '' : `_${lang}`}.html`,
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-          chunks: [
-            'picturefill',
-            'mob-detect',
-            'browsehappy',
-            `page/${pageName}`,
-            'vendor',
-            'runtime',
-          ],
+          chunks: ['mob-detect', `page/${pageName}`, 'vendor', 'runtime'],
           isMob: false,
           inject: false,
           lang,
-          headChunks: ['mob-detect', 'picturefill', 'browsehappy'],
+          headChunks: ['mob-detect'],
         }),
       ),
     )
@@ -82,16 +75,11 @@ const webpackConfigs = langList.map(lang => {
         Object.assign({}, pluginConfig, {
           filename: `${pageName}${isSingleLang ? '' : `_${lang}`}_mob.html`,
           template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-          chunks: [
-            'picturefill',
-            `page/${pageName}_mob`,
-            'vendor_mob',
-            'runtime',
-          ],
+          chunks: [`page/${pageName}_mob`, 'vendor_mob', 'runtime'],
           isMob: true,
           inject: false,
           lang,
-          headChunks: ['picturefill'],
+          headChunks: [],
         }),
       ),
     )

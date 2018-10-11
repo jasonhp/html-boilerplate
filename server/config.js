@@ -13,16 +13,7 @@ module.exports = {
   ), // can be overwritten by argv or process.env.PORT, if port is in use, a free one will be determined
 
   // Proxy
-  proxyTable: {
-    '/api': {
-      target: '',
-      changeOrigin: true,
-      pathRewrite: (path, req) => {
-        console.log(path)
-        return path.replace('/api', '')
-      },
-    },
-  },
+  proxyTable: {},
 
   // publicPath
   assetsPublicPath: '/',

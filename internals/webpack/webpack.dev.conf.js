@@ -74,11 +74,11 @@ const webpackConfigs = langList.map(lang => {
       new HtmlWebpackPlugin({
         filename: `${lang}/${pageName}.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-        chunks: ['picturefill', 'mob-detect', 'browsehappy', page],
+        chunks: ['mob-detect', page],
         lang,
         isMob: false,
         inject: false, // handle injection in render.js
-        headChunks: ['picturefill', 'mob-detect', 'browsehappy'],
+        headChunks: ['mob-detect'],
       }),
     )
 
@@ -87,11 +87,11 @@ const webpackConfigs = langList.map(lang => {
       new HtmlWebpackPlugin({
         filename: `${lang}/${pageName}_mob.html`,
         template: path.join(utils.getPagesDir(), `./${pageName}/render.js`),
-        chunks: ['picturefill', `${page}_mob`],
+        chunks: [`${page}_mob`],
         lang,
         isMob: true,
         inject: false,
-        headChunks: ['picturefill'],
+        headChunks: [],
       }),
     )
   })

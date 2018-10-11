@@ -27,11 +27,6 @@ module.exports = {
       process.cwd(),
       'app/components/common/mob-detect.js',
     ),
-    picturefill: path.join(
-      process.cwd(),
-      'node_modules/picturefill/dist/picturefill.min.js',
-    ),
-    browsehappy: path.join(process.cwd(), 'app/components/common/browsehappy'),
   },
   module: {
     rules: [
